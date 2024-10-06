@@ -1,0 +1,25 @@
+{
+  "name": "certificate-verifier-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "compile": "cd backend/move && aptos move compile",
+    "test": "cd backend/move && aptos move test",
+    "publish": "cd backend/move && aptos move publish",
+    "deploy": "cd backend && ts-node scripts/deploy.ts",
+    "interact": "cd backend && ts-node scripts/interact.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "aptos": "^1.21.0",
+    "pinata-web3": "^0.5.0"
+  }
+}
