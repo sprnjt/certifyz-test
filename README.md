@@ -1,39 +1,35 @@
-## Create Aptos Dapp Boilerplate Template
+### CertifyZ
 
-The Boilerplate template provides a starter dapp with all necessary dapp infrastructure and a simple wallet info implementation, transfer APT and a simple message board functionality to send and read a message on chain.
+Certificate Verification dApp on Aptos with IPFS integration represents a cutting-edge solution in the realm of digital credentialing. This decentralized application ingeniously combines the security and immutability of the Aptos blockchain with the efficient, distributed storage capabilities of the InterPlanetary File System (IPFS).
 
-## Read the Boilerplate template docs
-To get started with the Boilerplate template and learn more about the template functionality and usage, head over to the [Boilerplate template docs](https://aptos.dev/en/build/create-aptos-dapp/templates/boilerplate) 
+The dApp addresses the growing need for tamper-proof, easily verifiable digital certificates in various sectors, including education, professional training, and corporate credentialing. By leveraging blockchain technology, it ensures the integrity and authenticity of certificates, while IPFS provides a cost-effective and scalable method for storing the actual certificate data off-chain.
 
+The system works by allowing authorized issuers to create digital certificates, which are then uploaded to IPFS. The resulting IPFS hash, along with relevant metadata such as the recipient's address and timestamp, is recorded on the Aptos blockchain. This approach creates an immutable record of the certificate's existence and provenance.
 
-## The Boilerplate template provides:
+Verification becomes a straightforward process where anyone can check the authenticity of a certificate by cross-referencing the on-chain data with the IPFS-stored certificate. This not only ensures the certificate's validity but also maintains data privacy and reduces on-chain storage costs.
 
-- **Folder structure** - A pre-made dapp folder structure with a `src` (frontend) and `contract` folders.
-- **Dapp infrastructure** - All required dependencies a dapp needs to start building on the Aptos network.
-- **Wallet Info implementation** - Pre-made `WalletInfo` components to demonstrate how one can use to read a connected Wallet info.
-- **Transfer APT implementation** - Pre-made `transfer` components to send APT to an address.
-- **Message board functionality implementation** - Pre-made `message` components to send and read a message on chain
+The dApp's user-friendly interface, coupled with Aptos's fast and efficient blockchain, provides a seamless experience for both issuers and verifiers. It opens up new possibilities for secure, decentralized credential management, potentially revolutionizing how academic achievements, professional certifications, and other accomplishments are recorded and verified in our increasingly digital world.
 
+## Getting Started
 
-## What tools the template uses?
+Install the necessary node modules by running npm install in terminal.
 
-- React framework
-- shadcn/ui + tailwind for styling
-- Aptos TS SDK
-- Aptos Wallet Adapter
-- Node based Move commands
+First, run the development server:
 
-## What Move commands are available?
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-The tool utilizes [aptos-cli npm package](https://github.com/aptos-labs/aptos-cli) that lets us run Aptos CLI in a Node environment.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Some commands are built-in the template and can be ran as a npm script, for example:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- `npm run move:publish` - a command to publish the Move contract
-- `npm run move:test` - a command to run Move unit tests
-- `npm run move:compile` - a command to compile the Move contract
-- `npm run move:upgrade` - a command to upgrade the Move contract
-- `npm run dev` - a command to run the frontend locally
-- `npm run deploy` - a command to deploy the dapp to Vercel
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-For all other available CLI commands, can run `npx aptos` and see a list of all available commands.
+## Made by Suparnojit Sarkar
