@@ -32,12 +32,6 @@ graph TD
     L --> N
     M --> N
     G --> N
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#bbf,stroke:#333,stroke-width:2px
-    style L fill:#bfb,stroke:#333,stroke-width:2px
-    style M fill:#fbb,stroke:#333,stroke-width:2px
-    style N fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
 This flowchart illustrates the process of issuing and verifying certificates using our dApp, which integrates Aptos blockchain and Pinata IPFS.
