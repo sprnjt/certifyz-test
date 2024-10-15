@@ -3,7 +3,7 @@
    version = "0.0.1"
 
    [addresses]
-   certificate_addr = "0x78420e487d0b6954f14dff94608e7c1b5383a43e030dd06be08e9add80c1eae6"
+   certificate_addr = "0x508c171f342571cbae2061ce37ea68a74db941a8fc62cd03c9bd26cc15a5b017"
 
    [dependencies]
    AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "main" }

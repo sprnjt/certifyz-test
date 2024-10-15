@@ -37,3 +37,6 @@ next-env.d.ts
 
 frontend/.env.local
 .env
+
+backend/move/.aptos
+backend/build/CertificateVerifierDApp/BuildInfo.yaml

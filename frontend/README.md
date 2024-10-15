@@ -1,14 +1,46 @@
 ### CertifyZ
 
-Certificate Verification dApp on Aptos with IPFS integration represents a cutting-edge solution in the realm of digital credentialing. This decentralized application ingeniously combines the security and immutability of the Aptos blockchain with the efficient, distributed storage capabilities of the InterPlanetary File System (IPFS).
+Certificate Verification dApp on Aptos with Pinata IPFS integration offers a cutting-edge solution for digital credentialing, combining the security and immutability of the Aptos blockchain with Pinata’s reliable, distributed IPFS storage. This decentralized application addresses the growing need for tamper-proof, easily verifiable digital certificates across various sectors, including education, professional development, and corporate credentialing.
 
-The dApp addresses the growing need for tamper-proof, easily verifiable digital certificates in various sectors, including education, professional training, and corporate credentialing. By leveraging blockchain technology, it ensures the integrity and authenticity of certificates, while IPFS provides a cost-effective and scalable method for storing the actual certificate data off-chain.
+By utilizing blockchain technology, the dApp ensures the integrity and authenticity of digital certificates, while Pinata’s IPFS integration provides a scalable, cost-efficient method to store the actual certificate data off-chain. Authorized issuers can create digital certificates and upload them to Pinata’s IPFS. The resulting IPFS hash, along with metadata such as the recipient's address and timestamp, is recorded immutably on the Aptos blockchain. This creates a secure, permanent record of the certificate's existence and authenticity.
 
-The system works by allowing authorized issuers to create digital certificates, which are then uploaded to IPFS. The resulting IPFS hash, along with relevant metadata such as the recipient's address and timestamp, is recorded on the Aptos blockchain. This approach creates an immutable record of the certificate's existence and provenance.
+Verification becomes simple and efficient, allowing anyone to validate the certificate by cross-referencing the on-chain metadata with the certificate stored on Pinata's IPFS. This ensures the certificate’s authenticity while safeguarding data privacy and minimizing on-chain storage costs.
 
-Verification becomes a straightforward process where anyone can check the authenticity of a certificate by cross-referencing the on-chain data with the IPFS-stored certificate. This not only ensures the certificate's validity but also maintains data privacy and reduces on-chain storage costs.
+With its user-friendly interface and the speed of the Aptos blockchain, the dApp offers a seamless experience for both certificate issuers and verifiers. It has the potential to revolutionize secure, decentralized credential management, paving the way for a future where academic achievements, professional certifications, and other credentials are digitally stored and verified with ease.
 
-The dApp's user-friendly interface, coupled with Aptos's fast and efficient blockchain, provides a seamless experience for both issuers and verifiers. It opens up new possibilities for secure, decentralized credential management, potentially revolutionizing how academic achievements, professional certifications, and other accomplishments are recorded and verified in our increasingly digital world.
+## System Flowchart
+
+```mermaid
+graph TD
+    A[Start] --> B[Issuer Creates Digital Certificate]
+    B --> C[Upload Certificate to Pinata IPFS]
+    C --> D[Pinata Generates IPFS CID]
+    D --> E[Record CID on Aptos Blockchain]
+    E --> F[Store Metadata on Blockchain]
+    F --> G[Certificate Issuance Complete]
+
+    H[Verifier Requests Certificate Verification] --> I[Retrieve On-Chain Data from Aptos]
+    I --> J[Fetch Certificate from Pinata IPFS using CID]
+    J --> K{Compare On-Chain Data with IPFS Content}
+    K -->|Match| L[Certificate Verified]
+    K -->|No Match| M[Verification Failed]
+    
+    N[End]
+    L --> N
+    M --> N
+    G --> N
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#bbf,stroke:#333,stroke-width:2px
+    style L fill:#bfb,stroke:#333,stroke-width:2px
+    style M fill:#fbb,stroke:#333,stroke-width:2px
+    style N fill:#f9f,stroke:#333,stroke-width:2px
+```
+
+This flowchart illustrates the process of issuing and verifying certificates using our dApp, which integrates Aptos blockchain and Pinata IPFS.
+
+Contract Address: 0x6607146e9769d897501d1a9fd108a1820dcb89be4541b71debab0e42bc863046    
+Link:https://explorer.aptoslabs.com/txn/0x6607146e9769d897501d1a9fd108a1820dcb89be4541b71debab0e42bc863046?network=testnet
 
 ## Getting Started
 

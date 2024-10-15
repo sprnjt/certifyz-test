@@ -8,13 +8,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { AlertCircle, CheckCircle2, Upload, Wallet } from 'lucide-react'
 import { Open_Sans } from 'next/font/google'
 import { AptosClient, Types } from "aptos"
-import { uploadToPinata } from '@/utils/ipfs'; // Import the upload function
+import { uploadToPinata } from '@/utils/ipfs';
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
 // Aptos network configuration
 const NODE_URL = "https://fullnode.mainnet.aptoslabs.com/v1"
-const MODULE_ADDRESS = "0x78420e487d0b6954f14dff94608e7c1b5383a43e030dd06be08e9add80c1eae6"; // Replace with your actual module address
+const MODULE_ADDRESS = "0x6607146e9769d897501d1a9fd108a1820dcb89be4541b71debab0e42bc863046"; // Replace with your actual module address
 const MODULE_NAME = "CertificateVerifier";
 
 export function CertificateDApp() {
@@ -53,6 +53,12 @@ export function CertificateDApp() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Check if the file is a PDF
+      if (file.type !== 'application/pdf') {
+        alert("Please upload a valid PDF file."); // User feedback
+        setSelectedFile(null); // Reset selected file
+        return;
+      }
       setSelectedFile(file);
     }
   };
@@ -69,7 +75,7 @@ export function CertificateDApp() {
       walletAddress,
     });
 
-    if (!uploadedCID || !recipientAddress || !client || !walletAddress) {
+    if (!recipientAddress || !client || !walletAddress) {
       console.error("Missing required data for certificate issuance");
       alert("Please ensure all fields are filled out correctly."); // User feedback
       return;
@@ -81,6 +87,13 @@ export function CertificateDApp() {
     } else {
       console.error("No file selected for upload");
       alert("Please select a file to upload."); // User feedback
+      return;
+    }
+
+    // Ensure uploadedCID is set before proceeding
+    if (!uploadedCID) {
+      console.error("Uploaded CID is not set");
+      alert("Failed to upload file. Please try again."); // User feedback
       return;
     }
 
